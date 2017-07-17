@@ -1,0 +1,9 @@
+# Mac
+*.DS_Store
+
+# Intellij files
+.idea/
+*.iml
+
+# Gradle files
+build/
