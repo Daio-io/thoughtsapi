@@ -8,4 +8,5 @@ fun main(args: Array<String>) {
     val http = ignite()
     http.port(AppConstants.PORT)
     http.get("/rand", function = handlers.randomHandler)
+    http.get("/status", function = handlers.statusHandler)
 }

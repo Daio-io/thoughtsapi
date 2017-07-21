@@ -17,4 +17,9 @@ class Handlers(private val database: Database) {
         database.getShowerThoughts()
     }
 
+    val statusHandler = sparkHandler {
+        response.header("Content-Type", AppConstants.JSON_CONTENT)
+        "{\"status\":\"OK\"}"
+    }
+
 }
