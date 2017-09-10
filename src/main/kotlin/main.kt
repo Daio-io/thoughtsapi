@@ -5,8 +5,9 @@ import spark.kotlin.ignite
 
 fun main(args: Array<String>) {
     val handlers = Handlers(Database)
-    val http = ignite()
-    http.port(AppConstants.PORT)
-    http.get("/rand", function = handlers.randomHandler)
-    http.get("/status", function = handlers.statusHandler)
+    val spark = ignite()
+    spark.port(AppConstants.PORT)
+    spark.get("/rand", function = handlers.randomShowerHandler)
+    spark.get("/tils", function = handlers.randomTilHandler)
+    spark.get("/status", function = handlers.statusHandler)
 }

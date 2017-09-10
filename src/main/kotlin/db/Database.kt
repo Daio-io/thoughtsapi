@@ -8,8 +8,10 @@ object Database {
 
     private val connectionString = MongoClientURI(AppConstants.CONNECTION_STRING)
     private val db = MongoClient(connectionString).getDatabase(AppConstants.DATABASE_NAME)
-    private val col = db.getCollection("showerthoughts")
+    private val showerCollection = db.getCollection("showerthoughts")
+    private val tilsCollection = db.getCollection("tils")
 
-    fun getShowerThoughts(): List<String> = col.find().map { it.getString("text") }.toList()
+    fun getShowerThoughts(): List<String> = showerCollection.find().map { it.getString("text") }.toList()
+    fun getTils(): List<String> = tilsCollection.find().map { it.getString("text") }.toList()
 
 }
